@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealthOps Intelligence Dashboard</title>
+  <style>
+    :root { --navy:#003366; --bg:#f4f6f8; --card:#fff; --text:#1a1a1a; }
+    body { margin:0; font-family: Georgia, 'Times New Roman', serif; background:var(--bg); color:var(--text); }
+    header { background:var(--navy); color:#fff; padding:1.25rem 1.5rem; }
+    header h1 { margin:0; font-size:1.4rem; letter-spacing:.02em; }
+    header p { margin:.35rem 0 0; opacity:.9; font-size:.95rem; }
+    main { max-width:1100px; margin:0 auto; padding:1.25rem; }
+    .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:.75rem; }
+    .card { background:var(--card); border:1px solid #d8dee6; border-radius:6px; padding:.9rem 1rem; }
+    .card .label { font-size:.75rem; text-transform:uppercase; letter-spacing:.04em; color:#555; }
+    .card .value { font-size:1.55rem; font-weight:700; color:var(--navy); margin-top:.25rem; }
+    img { width:100%; border:1px solid #d8dee6; border-radius:6px; background:#fff; margin-top:1rem; }
+    footer { max-width:1100px; margin:0 auto 2rem; padding:0 1.25rem; font-size:.85rem; color:#555; }
+    a { color:var(--navy); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HealthOps Intelligence</h1>
+    <p>Healthcare operations &amp; quality analytics â€” equipment performance, downtime, SLA compliance</p>
+  </header>
+  <main>
+    <div class="kpis">
+      <div class="card"><div class="label">SLA Compliance</div><div class="value">52.6%</div></div>
+      <div class="card"><div class="label">Avg Resolution</div><div class="value">53.93 h</div></div>
+      <div class="card"><div class="label">Total Downtime</div><div class="value">2932.6 h</div></div>
+      <div class="card"><div class="label">Anomalous Assets</div><div class="value">15</div></div>
+      <div class="card"><div class="label">Clean Tickets</div><div class="value">397</div></div>
+      <div class="card"><div class="label">Quality Issues Caught</div><div class="value">50</div></div>
+    </div>
+    <img src="demo/dashboard.png" alt="HealthOps Intelligence dashboard screenshot" />
+  </main>
+  <footer>
+    Synthetic healthcare operations dataset.
+    Source: <a href="https://github.com/veera-1175/HealthOps-Intelligence">GitHub</a> Â·
+    KPI checks: <a href="kpi_verification.md">kpi_verification.md</a> Â·
+    DAX: <a href="../powerbi/dax_measures.md">dax_measures.md</a>
+  </footer>
+  <script type="application/json" id="kpis">{"equipment_count": 48, "ticket_count": 397, "resolved_tickets": 379, "avg_resolution_hours": 53.93, "sla_compliance_pct": 52.6, "total_downtime_hours": 2932.6, "anomalous_assets": 15, "quality_issues_caught": 50}</script>
+</body>
+</html>
