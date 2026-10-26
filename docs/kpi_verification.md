@@ -38,3 +38,7 @@ These KPIs are computed from the cleaned tables in `data/processed/` (same grain
 ## Power BI alignment
 
 Implement the DAX measures in `powerbi/dax_measures.md` against these processed tables. Card values for SLA %, average resolution hours, total downtime, and anomalous assets should match this verification file after refresh.
+
+## What `50 raw-data issues'' means
+
+Sum of **issue instances** across the quality-check table (not 50 check types, not 50 unique tickets). See README FAQ.
