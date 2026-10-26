@@ -28,10 +28,12 @@ Includes KPI cards and a dashboard screenshot generated from the cleaned analyti
 | KPI | Value |
 |-----|------:|
 | Clean service tickets | 397 |
-| Avg resolution hours | 53.93 |
-| SLA compliance | 52.6% |
+| Avg resolution hours (resolved) | 53.93 |
+| SLA compliance (resolved tickets) | 55.1% |
 | Total downtime hours | 2,932.6 |
 | Anomalous assets | 15 |
+
+SLA = share of **resolved** tickets where `resolution_hours <= sla_hours` (per-ticket targets: 24 / 48 / 72 / 96 hours).
 
 ## Project layout
 

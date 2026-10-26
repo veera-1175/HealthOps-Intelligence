@@ -33,16 +33,20 @@ def compute_kpis(tables: dict[str, pd.DataFrame]) -> dict:
     an = tables["anomalies"]
     q = tables["quality"]
     resolved = sr["resolved_at"].notna()
-    sla_mask = sr["sla_met"].notna()
+    # SLA % = share of *resolved* tickets where resolution_hours <= ticket sla_hours (24/48/72/96).
     return {
         "equipment_count": int(len(eq)),
         "ticket_count": int(len(sr)),
         "resolved_tickets": int(resolved.sum()),
         "avg_resolution_hours": round(float(sr.loc[resolved, "resolution_hours"].mean()), 2),
-        "sla_compliance_pct": round(float(sr.loc[sla_mask, "sla_met"].mean() * 100), 1),
+        "sla_compliance_pct": round(float(sr.loc[resolved, "sla_met"].mean() * 100), 1),
         "total_downtime_hours": round(float(dt["downtime_hours"].sum()), 1),
         "anomalous_assets": int(an["anomaly_flag"].sum()),
         "quality_issues_caught": int(q["issue_count"].sum()),
+        "sla_definition": (
+            "Resolved tickets only; sla_met when resolution_hours <= ticket sla_hours "
+            "(targets are 24, 48, 72, or 96 hours)."
+        ),
     }
 
 
@@ -61,11 +65,18 @@ def write_verification(kpis: dict, tables: dict[str, pd.DataFrame]) -> None:
         f"| Equipment assets | {kpis['equipment_count']} | `COUNT(*)` on equipment |",
         f"| Service tickets (clean) | {kpis['ticket_count']} | de-duplicated + valid equipment refs |",
         f"| Resolved tickets | {kpis['resolved_tickets']} | `resolved_at IS NOT NULL` |",
-        f"| Avg resolution hours | {kpis['avg_resolution_hours']} | `AVG(resolution_hours)` |",
-        f"| SLA compliance % | {kpis['sla_compliance_pct']}% | share of tickets with `sla_met = true` |",
+        f"| Avg resolution hours | {kpis['avg_resolution_hours']} | `AVG(resolution_hours)` on resolved tickets |",
+        f"| SLA compliance % | {kpis['sla_compliance_pct']}% | resolved tickets with `resolution_hours <= sla_hours` |",
         f"| Total downtime hours | {kpis['total_downtime_hours']} | `SUM(downtime_hours)` |",
         f"| Anomalous assets | {kpis['anomalous_assets']} | Python anomaly flags |",
         f"| Raw quality issues caught | {kpis['quality_issues_caught']} | sum of quality check counts |",
+        "",
+        "## SLA definition (interview-ready)",
+        "",
+        "- **Eligible population:** resolved tickets only (`resolved_at` is present).",
+        "- **SLA threshold:** each ticket has its own target in `sla_hours` — one of **24, 48, 72, or 96** hours.",
+        "- **Calculation:** `sla_met = resolution_hours <= sla_hours`; compliance % = mean of `sla_met` over resolved tickets.",
+        "- **Avg resolution hours:** mean `resolution_hours` over the same resolved population (can exceed the modal SLA target when many tickets breach).",
         "",
         "## Raw data-quality checks (before cleaning)",
         "",

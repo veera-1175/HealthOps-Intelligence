@@ -9,11 +9,18 @@ These KPIs are computed from the cleaned tables in `data/processed/` (same grain
 | Equipment assets | 48 | `COUNT(*)` on equipment |
 | Service tickets (clean) | 397 | de-duplicated + valid equipment refs |
 | Resolved tickets | 379 | `resolved_at IS NOT NULL` |
-| Avg resolution hours | 53.93 | `AVG(resolution_hours)` |
-| SLA compliance % | 52.6% | share of tickets with `sla_met = true` |
+| Avg resolution hours | 53.93 | `AVG(resolution_hours)` on resolved tickets |
+| SLA compliance % | 55.1% | resolved tickets with `resolution_hours <= sla_hours` |
 | Total downtime hours | 2932.6 | `SUM(downtime_hours)` |
 | Anomalous assets | 15 | Python anomaly flags |
 | Raw quality issues caught | 50 | sum of quality check counts |
+
+## SLA definition (interview-ready)
+
+- **Eligible population:** resolved tickets only (`resolved_at` is present).
+- **SLA threshold:** each ticket has its own target in `sla_hours` — one of **24, 48, 72, or 96** hours.
+- **Calculation:** `sla_met = resolution_hours <= sla_hours`; compliance % = mean of `sla_met` over resolved tickets.
+- **Avg resolution hours:** mean `resolution_hours` over the same resolved population (can exceed the modal SLA target when many tickets breach).
 
 ## Raw data-quality checks (before cleaning)
 
