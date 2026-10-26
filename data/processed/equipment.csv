@@ -1,0 +1,49 @@
+equipment_id,equipment_name,equipment_type,site,install_date,status
+EQ-0001,MRI-01,Ventilator,Pune Depot,2024-03-22,Active
+EQ-0002,MRI-02,Ventilator,Chennai GBS,2024-10-18,Active
+EQ-0003,Ventilator-03,Ventilator,Pune Depot,2020-08-18,Maintenance
+EQ-0004,X-Ray-04,Ultrasound,Pune Depot,2024-07-22,Active
+EQ-0005,Ventilator-05,Patient Monitor,Hyderabad Hub,2022-03-07,Maintenance
+EQ-0006,Ultrasound-06,CT,Chennai GBS,2020-04-24,Active
+EQ-0007,X-Ray-07,Ventilator,Hyderabad Hub,2023-09-23,Active
+EQ-0008,Ventilator-08,Ultrasound,Chennai GBS,2024-05-23,Maintenance
+EQ-0009,Ventilator-09,Ventilator,Bengaluru Lab,2022-04-18,Active
+EQ-0010,Ultrasound-10,MRI,Pune Depot,2023-05-11,Active
+EQ-0011,X-Ray-11,Ventilator,Hyderabad Hub,2021-08-08,Maintenance
+EQ-0012,X-Ray-12,Ultrasound,Chennai GBS,2020-12-06,Active
+EQ-0013,Ultrasound-13,MRI,Pune Depot,2021-02-11,Active
+EQ-0014,Patient Monitor-14,Ventilator,Bengaluru Lab,2024-02-04,Active
+EQ-0015,Patient Monitor-15,Ventilator,Chennai GBS,2024-02-03,Active
+EQ-0016,Ultrasound-16,Ventilator,Bengaluru Lab,2021-06-01,Active
+EQ-0017,CT-17,Ventilator,Pune Depot,2020-12-25,Active
+EQ-0018,Ventilator-18,MRI,Bengaluru Lab,2023-04-09,Maintenance
+EQ-0019,Ultrasound-19,Ventilator,Hyderabad Hub,2022-04-04,Maintenance
+EQ-0020,Patient Monitor-20,Patient Monitor,Chennai GBS,2020-07-24,Active
+EQ-0021,Ultrasound-21,Ventilator,Pune Depot,2022-10-12,Active
+EQ-0022,MRI-22,Ventilator,Pune Depot,2022-09-21,Active
+EQ-0023,MRI-23,Patient Monitor,Bengaluru Lab,2020-02-25,Active
+EQ-0024,Ultrasound-24,Ultrasound,Bengaluru Lab,2022-01-03,Active
+EQ-0025,X-Ray-25,X-Ray,Chennai GBS,2020-04-14,Active
+EQ-0026,X-Ray-26,CT,Bengaluru Lab,2023-04-03,Active
+EQ-0027,MRI-27,Patient Monitor,Pune Depot,2023-04-08,Maintenance
+EQ-0028,Ultrasound-28,Ultrasound,Hyderabad Hub,2020-10-26,Maintenance
+EQ-0029,Ultrasound-29,MRI,Chennai GBS,2023-07-21,Active
+EQ-0030,Ventilator-30,Ultrasound,Pune Depot,2022-06-18,Active
+EQ-0031,X-Ray-31,MRI,Hyderabad Hub,2022-03-12,Active
+EQ-0032,MRI-32,Ultrasound,Chennai GBS,2023-02-05,Active
+EQ-0033,Patient Monitor-33,Ultrasound,Bengaluru Lab,2020-07-30,Active
+EQ-0034,Ultrasound-34,X-Ray,Hyderabad Hub,2023-06-10,Maintenance
+EQ-0035,Ultrasound-35,CT,Bengaluru Lab,2023-10-30,Maintenance
+EQ-0036,CT-36,Ventilator,Bengaluru Lab,2021-05-03,Active
+EQ-0037,MRI-37,MRI,Hyderabad Hub,2022-03-29,Maintenance
+EQ-0038,Ventilator-38,CT,Pune Depot,2022-11-06,Active
+EQ-0039,Patient Monitor-39,CT,Hyderabad Hub,2023-09-24,Maintenance
+EQ-0040,Ultrasound-40,Ventilator,Pune Depot,2023-01-31,Active
+EQ-0041,MRI-41,Patient Monitor,Chennai GBS,2020-05-31,Active
+EQ-0042,Ventilator-42,Ultrasound,Bengaluru Lab,2022-06-06,Active
+EQ-0043,CT-43,CT,Pune Depot,2020-07-04,Active
+EQ-0044,CT-44,Patient Monitor,Bengaluru Lab,2024-07-19,Active
+EQ-0045,X-Ray-45,Patient Monitor,Hyderabad Hub,2022-11-27,Active
+EQ-0046,CT-46,MRI,Chennai GBS,2022-05-16,Maintenance
+EQ-0047,Ultrasound-47,Ventilator,Chennai GBS,2022-05-24,Active
+EQ-0048,Ventilator-48,Ultrasound,Hyderabad Hub,2022-10-23,Maintenance

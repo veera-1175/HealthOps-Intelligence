@@ -1,0 +1,9 @@
+check_name,issue_count,field_scope
+duplicate_service_tickets,6,service_requests.ticket_id
+missing_equipment_on_ticket,8,service_requests.equipment_id
+invalid_equipment_reference,15,service_requests.equipment_id
+missing_resolved_timestamp,19,service_requests.resolved_at
+resolved_before_opened,0,service_requests timestamps
+missing_downtime_end,1,downtime_events.ended_at
+downtime_end_before_start,1,downtime_events timestamps
+invalid_downtime_equipment_ref,0,downtime_events.equipment_id
