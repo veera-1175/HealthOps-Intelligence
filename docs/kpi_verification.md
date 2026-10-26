@@ -17,10 +17,10 @@ These KPIs are computed from the cleaned tables in `data/processed/` (same grain
 
 ## SLA definition (interview-ready)
 
-- **Eligible population:** resolved tickets only (`resolved_at` is present).
-- **SLA threshold:** each ticket has its own target in `sla_hours` — one of **24, 48, 72, or 96** hours.
-- **Calculation:** `sla_met = resolution_hours <= sla_hours`; compliance % = mean of `sla_met` over resolved tickets.
-- **Avg resolution hours:** mean `resolution_hours` over the same resolved population (can exceed the modal SLA target when many tickets breach).
+- **Eligible population:** resolved tickets only (`resolved_at` is present) — **379** tickets in the current cleaned dataset.
+- **SLA threshold:** **ticket-level** target in `sla_hours` — one of **24, 48, 72, or 96** hours per ticket (not mapped 1:1 by priority).
+- **Calculation:** `sla_met = resolution_hours <= sla_hours`; compliance % = mean of `sla_met` over resolved tickets → **55.1%**.
+- **Avg resolution hours:** mean `resolution_hours` over the **same** resolved population → **53.93h** (long breaches can raise the mean even when many tickets still meet their own targets).
 
 ## Raw data-quality checks (before cleaning)
 
